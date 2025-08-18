@@ -5,6 +5,7 @@ import bartender.bartenderback.task.domain.Task;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -15,8 +16,8 @@ public class TaskResponse {
     private String content;
     private PriorityType priority;
     private String category;
-    private LocalDateTime startDate;
-    private LocalDateTime dueDate;
+    private LocalDate startDate;
+    private LocalDate dueDate;
     private boolean completed;
 
     public static TaskResponse from(Task task) {

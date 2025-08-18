@@ -7,6 +7,7 @@ import bartender.bartenderback.task.dto.TaskResponse;
 import bartender.bartenderback.task.exception.TaskNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -63,5 +64,13 @@ public class TaskService {
         Task updatedTask = taskRepository.save(task);
 
         return TaskResponse.from(updatedTask);
+    }
+
+    @Transactional
+    public void deleteTask(Long id) {
+        if(!taskRepository.existsById(id)) {
+            throw new TaskNotFoundException("작업을 찾을 수 없습니다. id : " + id);
+        }
+        taskRepository.deleteById(id);
     }
 }

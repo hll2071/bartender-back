@@ -45,4 +45,10 @@ public class TaskController {
     public ApiResponse<TaskResponse> updateTask(@PathVariable Long id, @RequestBody @Valid TaskRequest request) {
         return ApiResponse.ok(taskService.updateTask(id, request));
     }
+
+    @DeleteMapping("/{id}")
+    public ApiResponse<TaskResponse> deleteTask(@PathVariable Long id) {
+        taskService.deleteTask(id);
+        return ApiResponse.ok(null);
+    }
 }

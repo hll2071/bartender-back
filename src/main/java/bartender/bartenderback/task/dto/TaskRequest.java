@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import org.springframework.cglib.core.Local;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -22,7 +23,7 @@ public class TaskRequest {
     @NotBlank(message = "카테고리는 필수입니다.")
     private String category;
 
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
-    private LocalDateTime dueDate;
+    private LocalDate dueDate;
 }

@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -30,9 +31,9 @@ public class Task {
     @Column(nullable = false)
     private String category;
 
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
-    private LocalDateTime dueDate;
+    private LocalDate dueDate;
 
     @Column(nullable = false)
     private boolean completed = false;
@@ -62,7 +63,7 @@ public class Task {
         this.dueDate = taskRequest.getDueDate();
     }
 
-    Task(String title, String content, PriorityType priority, String category, LocalDateTime startDate, LocalDateTime dueDate, boolean completed) {
+    Task(String title, String content, PriorityType priority, String category, LocalDate startDate, LocalDate dueDate, boolean completed) {
         this.title = title;
         this.content = content;
         this.priority = priority;
