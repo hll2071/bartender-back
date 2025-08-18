@@ -7,6 +7,7 @@ import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 public class TaskRequest {
@@ -21,7 +22,7 @@ public class TaskRequest {
     private PriorityType priority;
 
     @NotBlank(message = "카테고리는 필수입니다.")
-    private String category;
+    private List<CategoryDto> category;
 
     private LocalDate startDate;
 

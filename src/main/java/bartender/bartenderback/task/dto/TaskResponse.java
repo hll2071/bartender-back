@@ -7,6 +7,7 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -15,7 +16,7 @@ public class TaskResponse {
     private String title;
     private String content;
     private PriorityType priority;
-    private String category;
+    private List<Category> category;
     private LocalDate startDate;
     private LocalDate dueDate;
     private boolean completed;
