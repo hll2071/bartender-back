@@ -1,9 +1,11 @@
 package bartender.bartenderback.chat.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public class ChatMessageRequest {
 
     @NotBlank(message = "사용자 메시지를 입력해주세요.")
